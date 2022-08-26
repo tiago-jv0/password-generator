@@ -1,0 +1,24 @@
+.button {
+    background-color: var(--neon-green);
+    border: none;
+
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 6.5rem;
+
+    color: var(--dark-grey);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: var(--dark-grey);
+        color: var(--neon-green);
+        border: 2px solid var(--neon-green);
+    }
+}
