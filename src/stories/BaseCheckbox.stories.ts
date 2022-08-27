@@ -16,10 +16,16 @@ const Template : StoryFn<typeof BaseCheckbox> = (args) =>  ({
     template: ` <BaseCheckbox v-bind="args" /> `
 })
 
+export const Default = Template.bind({})
+Default.args = {
+    label: 'Any text',
+    id: 'any_id',
+    modelValue : false
+}
+
 export const Active = Template.bind({})
 Active.args = {
-    text: 'Any text',
-    name: 'any_name',
+    label: 'Any text',
     id: 'any_id',
-    isChecked: false
+    modelValue: true
 }
