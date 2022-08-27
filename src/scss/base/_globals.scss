@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "Jet Brains Mono";
-    src: url("../../assets/fonts/JetBrainsMono-VariableFont_wght.ttf");
-    }
-
 *,
 *::before,
 *::after {
@@ -14,7 +9,7 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    font-family: "Jet Brains Mono", sans-serif;
+    font-family: "JetBrains Mono", sans-serif;
 }
 
 body {
