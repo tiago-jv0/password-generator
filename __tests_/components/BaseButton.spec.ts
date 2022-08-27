@@ -3,15 +3,18 @@ import { mount } from "@vue/test-utils";
 
 import BaseButton from "@/components/BaseButton.vue";
 
+
 describe('BaseButton.vue', () => {
     it('should render properly' , () => {
         const wrapper = mount(BaseButton, {
             slots: {
-                default: 'Button Idle'
+                default: 'Button Idle',
+                icon: `any Icon`
             }
         })
 
         expect(wrapper.text()).toContain('Button Idle')
+        expect(wrapper.text()).toContain('any Icon')
     })
 
     it('should emit click when user clicks the button',async () => {

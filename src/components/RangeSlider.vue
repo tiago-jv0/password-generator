@@ -49,7 +49,6 @@ const handleInput = (event: Event) => {
   const slider = event.target as HTMLInputElement;
   progress.value = parseInt(slider.value);
 
-  emit("change", progress.value);
   emit("update:modelValue", progress.value);
 };
 </script>

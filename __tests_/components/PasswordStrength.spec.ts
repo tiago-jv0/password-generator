@@ -4,14 +4,14 @@ import { mount } from "@vue/test-utils";
 import PasswordStrength from "@/components/PasswordStrength.vue";
 
 describe("PasswordStrength.vue", () => {
-  it("should render properly", () => {
+  it("should render properly when null is passed as strength", () => {
     const wrapper = mount(PasswordStrength, {
       props: {
-        strength: "weak",
+        strength: null,
       },
     });
 
-    expect(wrapper.vm).toBeDefined();
+    expect(wrapper.find('.password-strength__classification').text()).toBe('');
   });
 
   it("should handle too weak state when strength is too weak", () => {
