@@ -2,33 +2,51 @@
   <label :for="props.id" class="checkbox">
     <input
       class="checkbox__input"
-      @click.stop="handleChange"
       type="checkbox"
-      :name="props.name"
       :id="props.id"
-      :checked="props.isChecked"
+      :value="props.value"
+      v-model="isChecked"
     />
     <span class="checkbox__landmark" />
-    <p class="checkbox__text">{{ props.text }}</p>
+    <p class="checkbox__label">{{ props.label }}</p>
   </label>
 </template>
 
 <script setup lang="ts">
-type Props = {
-  text: string;
-  name: string;
-  id: string;
-  isChecked: boolean;
-};
+import { computed } from "vue";
 
-const handleChange = () => {
-  console.log("emitting...");
-  emit("clicked");
+type Props = {
+  label: string;
+  id: string;
+  value: string;
+  modelValue: boolean | Array<string>;
 };
 
 const props = defineProps<Props>();
 
 const emit = defineEmits<{
-  (event: "clicked"): void;
+  (event: "update:modelValue", value: Array<string> | boolean): void;
 }>();
+
+const isChecked = computed({
+  get: () => {
+    if (Array.isArray(props.modelValue)) {
+      return props.modelValue.includes(props.value);
+    }
+    return props.modelValue;
+  },
+  set: (isChecked) => {
+    if (Array.isArray(props.modelValue)) {
+      const newValue = [...props.modelValue];
+      if (isChecked) {
+        newValue.push(props.value);
+      } else {
+        newValue.splice(newValue.indexOf(props.value), 1);
+      }
+      emit("update:modelValue", newValue);
+    } else {
+      emit("update:modelValue", isChecked);
+    }
+  },
+});
 </script>
