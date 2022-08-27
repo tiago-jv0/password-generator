@@ -1,60 +1,62 @@
 <template>
-  <div class="page">
+  <main class="page">
     <h1 class="page__title">Password Generator</h1>
 
-    <div class="page__input-container">
-      <BaseInput
-        placeholder="P4$5W0rD!"
-        name="password"
-        id="password"
-        :disabled="true"
-        :value="generatedPassword"
-      />
-    </div>
-
-    <main class="page__content">
-      <RangeSlider
-        purpose="Character Length"
-        :maximum="20"
-        v-model="maximumLength"
-      />
-      <div class="page__checkboxes">
-        <BaseCheckbox
-          label="Include Uppercase Letters"
-          id="criterias-uppercase"
-          value="uppercase"
-          v-model="selectedCriterias"
-        ></BaseCheckbox>
-
-        <BaseCheckbox
-          label="Include Lowercase Letters"
-          id="criterias-lowercase"
-          value="lowercase"
-          v-model="selectedCriterias"
-        ></BaseCheckbox>
-
-        <BaseCheckbox
-          label="Include Numbers"
-          id="criterias-numbers"
-          value="numbers"
-          v-model="selectedCriterias"
-        ></BaseCheckbox>
-
-        <BaseCheckbox
-          label="Include Symbols"
-          id="criterias-symbols"
-          value="symbols"
-          v-model="selectedCriterias"
-        ></BaseCheckbox>
+    <div class="page__content">
+      <div class="page__input-container">
+        <BaseInput
+          placeholder="P4$5W0rD!"
+          name="password"
+          id="password"
+          :disabled="true"
+          :value="generatedPassword"
+        />
       </div>
 
-      <PasswordStrength :strength="passwordStrength" />
+      <div class="page__filters">
+        <RangeSlider
+          purpose="Character Length"
+          :maximum="20"
+          v-model="maximumLength"
+        />
+        <div class="page__checkboxes">
+          <BaseCheckbox
+            label="Include Uppercase Letters"
+            id="criterias-uppercase"
+            value="uppercase"
+            v-model="selectedCriterias"
+          ></BaseCheckbox>
 
-      <BaseButton @click="handleGeneratePassword"
-        >Generate <span><BaseIcon icon="arrow-right" /></span
-      ></BaseButton>
-    </main>
-  </div>
+          <BaseCheckbox
+            label="Include Lowercase Letters"
+            id="criterias-lowercase"
+            value="lowercase"
+            v-model="selectedCriterias"
+          ></BaseCheckbox>
+
+          <BaseCheckbox
+            label="Include Numbers"
+            id="criterias-numbers"
+            value="numbers"
+            v-model="selectedCriterias"
+          ></BaseCheckbox>
+
+          <BaseCheckbox
+            label="Include Symbols"
+            id="criterias-symbols"
+            value="symbols"
+            v-model="selectedCriterias"
+          ></BaseCheckbox>
+        </div>
+
+        <PasswordStrength :strength="passwordStrength" />
+
+        <BaseButton @click="handleGeneratePassword"
+          >Generate <span><BaseIcon icon="arrow-right" /></span
+        ></BaseButton>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script setup lang="ts">

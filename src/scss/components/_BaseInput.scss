@@ -19,7 +19,9 @@
         &::placeholder {
             font-size: var(--font-size-heading-large);
             line-height: var(--line-height-heading-large);
-            color: rgba(230, 229, 234, 0.25);
+            color: var(--light-white);
+            opacity: 0.25;
+
         }
     }
 
