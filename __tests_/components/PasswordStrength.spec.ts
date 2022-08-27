@@ -5,7 +5,9 @@ import PasswordStrength from "@/components/PasswordStrength.vue";
 
 describe("PasswordStrength.vue", () => {
   it("should render properly", () => {
-    const wrapper = mount(PasswordStrength);
+    const wrapper = mount(PasswordStrength, {
+      strength: 'weak'
+    });
 
     expect(wrapper.vm).toBeDefined();
   });
