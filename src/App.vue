@@ -51,7 +51,7 @@
       <PasswordStrength :strength="passwordStrength" />
 
       <BaseButton @click="handleGeneratePassword"
-        >Generate <span><Icon icon="arrow-right" /></span
+        >Generate <span><BaseIcon icon="arrow-right" /></span
       ></BaseButton>
     </main>
   </div>
@@ -59,7 +59,7 @@
 
 <script setup lang="ts">
 import BaseButton from "./components/BaseButton.vue";
-import Icon from "./components/Icon.vue";
+import BaseIcon from "./components/BaseIcon.vue";
 import RangeSlider from "./components/RangeSlider.vue";
 import BaseCheckbox from "./components/BaseCheckbox.vue";
 import PasswordStrength from "./components/PasswordStrength.vue";

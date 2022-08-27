@@ -18,14 +18,14 @@
       >
         Copied
       </p>
-      <Icon icon="copy" />
+      <BaseIcon icon="copy" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import Icon from "./Icon.vue";
+import BaseIcon from "./BaseIcon.vue";
 
 const emit = defineEmits<{
   (event: "input", payload: string): void;

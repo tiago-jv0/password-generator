@@ -1,11 +1,11 @@
 import BaseButton from "../components/BaseButton.vue";
-import Icon from '../components/Icon.vue'
+import BaseIcon from '../components/BaseIcon.vue'
 import type { Meta, StoryFn } from "@storybook/vue3";
 
 export default {
   title: "BaseButton",
   component: BaseButton,
-  subcomponents: { Icon },
+  subcomponents: { BaseIcon },
   argTypes: {
     default: {
       control: 'text',
@@ -17,7 +17,7 @@ export default {
 
 
 const Template : StoryFn<typeof BaseButton> = (args) =>  ({
-    components: { BaseButton, Icon },
+    components: { BaseButton, BaseIcon },
     setup(){
         return { args }
     },
@@ -25,7 +25,7 @@ const Template : StoryFn<typeof BaseButton> = (args) =>  ({
       <BaseButton> 
         {{ args.default }}
         <template v-if="args.icon" #icon>
-          <Icon :icon="args.icon" />
+          <BaseIcon :icon="args.icon" />
         </template>
       </BaseButton>
       `
