@@ -73,7 +73,7 @@ type PasswordStrengthLevels = "too-weak" | "weak" | "medium" | "strong";
 const selectedCriterias = ref<Array<string>>([]);
 const maximumLength = ref(0);
 const generatedPassword = ref("");
-const passwordStrength = ref<PasswordStrengthLevels>("too-weak");
+const passwordStrength = ref<PasswordStrengthLevels | null>(null);
 
 watch(selectedCriterias, (newCriterias) => {
   const strenghtLevels = ["too-weak", "weak", "medium", "strong"] as const;

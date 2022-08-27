@@ -28,25 +28,31 @@ import { computed } from "vue";
 type StrengthLevels = "too-weak" | "weak" | "medium" | "strong";
 
 type Props = {
-  strength: StrengthLevels;
+  strength: StrengthLevels | null;
 };
 
 const props = defineProps<Props>();
 
 const strengthClassicationMessage = computed(() => {
-  const classificationsMessage = {
-    "too-weak": "Too Weak!",
-    weak: "Weak",
-    medium: "Medium",
-    strong: "Strong",
-  };
+  if (props.strength) {
+    const classificationsMessage = {
+      "too-weak": "Too Weak!",
+      weak: "Weak",
+      medium: "Medium",
+      strong: "Strong",
+    };
 
-  return classificationsMessage[props.strength];
+    return classificationsMessage[props.strength];
+  }
+  return "";
 });
 
 const amountOfActiveRatings = computed(() => {
-  const levels = ["too-weak", "weak", "medium", "strong"];
-  const ratingsAmount = levels.findIndex((level) => level === props.strength);
-  return ratingsAmount + 1;
+  if (props.strength) {
+    const levels = ["too-weak", "weak", "medium", "strong"];
+    const ratingsAmount = levels.findIndex((level) => level === props.strength);
+    return ratingsAmount + 1;
+  }
+  return 0;
 });
 </script>
