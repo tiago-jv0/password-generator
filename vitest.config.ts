@@ -6,6 +6,7 @@ export default {
   test: {
     globals: true,
     environment: 'jsdom',
+    cache: false
   },
   resolve: {
     alias: {
