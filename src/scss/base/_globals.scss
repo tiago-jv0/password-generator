@@ -17,6 +17,10 @@ html {
     font-family: "Jet Brains Mono", sans-serif;
 }
 
+body {
+    background-color: var(--very-dark-grey);
+}
+
 img,
 source {
     width: 100%;

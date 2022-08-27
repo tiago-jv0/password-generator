@@ -2,6 +2,10 @@
 
 @use "./base/globals";
 
+@use "./components/BaseInput";
 @use "./components/BaseButton";
 @use "./components/BaseCheckbox";
+@use "./components/RangeSlider";
 @use "./components/PasswordStrength";
+
+@use "./pages/Home";
