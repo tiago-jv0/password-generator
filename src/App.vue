@@ -15,6 +15,7 @@
 
       <div class="page__filters">
         <RangeSlider
+          id="range-slider"
           purpose="Character Length"
           :maximum="20"
           v-model="maximumLength"

@@ -1,14 +1,16 @@
 <template>
   <div class="slider">
-    <div class="slider__information">
+    <label :for="props.id" class="slider__information">
       <p class="slider__purpose">{{ props.purpose }}</p>
       <strong class="slider__progress">{{ progress }}</strong>
-    </div>
+    </label>
     <input
+      aria-hidden="false"
       type="range"
       name="slider"
       class="slider__input"
       min="0"
+      :id="props.id"
       :max="props.maximum"
       :value="progress"
       @input="handleInput"
@@ -21,6 +23,7 @@
 import { ref, watch } from "vue";
 
 const props = defineProps<{
+  id: string;
   purpose: string;
   maximum: number;
   modelValue: number;

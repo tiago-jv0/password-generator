@@ -5,6 +5,7 @@
       strengthClassicationMessage
     }}</span>
     <ul
+      aria-label="Rating of password strength"
       :class="[
         'password-strength__ratings',
         `password-strength__ratings--${props.strength}`,

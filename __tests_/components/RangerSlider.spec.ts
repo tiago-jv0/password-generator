@@ -8,6 +8,7 @@ describe('RangerSlider.vue', () => {
     it('should render properly', () => {
         const wrapper = mount(RangeSlider, {
             props: {
+                id: "range-slider",
                 purpose : 'Any Purpose',
                 maximum: 100,
                 modelValue: 0
@@ -26,6 +27,7 @@ describe('RangerSlider.vue', () => {
     it('should emit update model value when user swipes slider' , async () => {
         const wrapper = mount(RangeSlider, {
             props: {
+                id: "range-slider",
                 purpose : 'Any Purpose',
                 maximum: 100,
                 modelValue: 0
@@ -46,6 +48,7 @@ describe('RangerSlider.vue', () => {
     it('should update progress bar when user swipes slider' , async () => {
         const wrapper = mount(RangeSlider, {
             props: {
+                id: "range-slider",
                 purpose : 'Any Purpose',
                 maximum: 100,
                 modelValue: 0

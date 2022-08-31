@@ -1,6 +1,7 @@
 @use "./abstract/variables";
 
 @use "./base/globals";
+@use "./utils/visually-hidden";
 
 @use "./components/BaseInput";
 @use "./components/BaseButton";

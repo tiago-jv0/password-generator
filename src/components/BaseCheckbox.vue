@@ -6,8 +6,8 @@
       :id="props.id"
       :value="props.value"
       v-model="isChecked"
+      :aria-checked="isChecked"
     />
-    <span class="checkbox__landmark" />
     <p class="checkbox__label">{{ props.label }}</p>
   </label>
 </template>

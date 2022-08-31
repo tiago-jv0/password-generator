@@ -1,5 +1,5 @@
 <template>
-  <div class="input__container">
+  <label class="input__container">
     <input
       type="text"
       class="input__input"
@@ -8,6 +8,7 @@
       :value="props.value"
       @input="handleInput"
       :disabled="props.disabled"
+      :aria-disabled="props.disabled"
       ref="inputRef"
     />
 
@@ -20,7 +21,7 @@
       </p>
       <BaseIcon icon="copy" />
     </div>
-  </div>
+  </label>
 </template>
 
 <script setup lang="ts">
